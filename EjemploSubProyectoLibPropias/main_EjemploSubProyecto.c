@@ -6,5 +6,14 @@
 #include <stdio.h>
 
 int main(){
+    enum meses {MAYO, JUNIO};
+
+    enum meses mes_clases = MAYO;
+
+    if (mes_clases ==  MAYO){
+        printf("");
+    }
+
+
     printf("%f", potencia(2.0,3));
 }
