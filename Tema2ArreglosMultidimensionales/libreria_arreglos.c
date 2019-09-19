@@ -39,15 +39,15 @@ void representa_arreglo_bidimensional_en_unidimensional(){
     int arreglo[TAM_COLUMNAS*TAM_FILAS];
     int matriz[TAM_COLUMNAS][TAM_FILAS];
     for (int i = 0; i < TAM_COLUMNAS * TAM_FILAS; ++i) {
-        f = i % TAM_COLUMNAS;  // Debe de ser TAM_FILAS
-        c = (i - f) / TAM_COLUMNAS;
+        c = i % TAM_COLUMNAS;
+        f = (i - c) / TAM_COLUMNAS;
         matriz[c][f] = i + 1;
         arreglo[i] = i + 1;
     }
 
-    for (int c = 0; c < TAM_COLUMNAS; ++c) {
-        for (int f = 0; f < TAM_FILAS; ++f) {
-            i = c * TAM_COLUMNAS + f;
+    for (int f = 0; f < TAM_FILAS; ++f) {
+        for (int c = 0; c < TAM_COLUMNAS; ++c) {
+            i = f * TAM_COLUMNAS + c;
             printf("Fila: %d, Columna %d, Valor %d\n", f, c, arreglo[i]);
             printf("Fila: %d, Columna %d, Valor %d\n", f, c, matriz[c][f]);
         }
