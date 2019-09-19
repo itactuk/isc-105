@@ -55,6 +55,28 @@ void representa_arreglo_bidimensional_en_unidimensional(){
 
 }
 
+void representa_arreglo_bidimensional_en_unidimensional_basado_filas(){
+    int c, f, i;
+    int TAM_COLUMNAS = 5;
+    int TAM_FILAS = 4;
+    int arreglo[] = {1, 6, 11, 16, 2, 7, 12, 17, 3, 8, 13, 18, 4, 9, 14, 19, 5, 10, 15, 20};
+    int matriz[TAM_COLUMNAS][TAM_FILAS];
+    for (int i = 0; i < TAM_COLUMNAS * TAM_FILAS; ++i) {
+        f = i % TAM_FILAS;
+        c = (i - f) / TAM_FILAS;
+        matriz[c][f] = arreglo[i];
+    }
+
+    for (int f = 0; f < TAM_FILAS; ++f) {
+        for (int c = 0; c < TAM_COLUMNAS; ++c) {
+            i = c * TAM_FILAS + f;
+            printf("Fila: %d, Columna %d, Valor %d\n", f, c, arreglo[i]);
+            printf("Fila: %d, Columna %d, Valor %d\n", f, c, matriz[c][f]);
+        }
+    }
+
+}
+
 int producto_punto(int m1, int n1, int m2, int n2, int matriz1[m1][n1], int matriz2[m2][n2], int matriz_resultado[m1][n2]){
     int tmp;
 

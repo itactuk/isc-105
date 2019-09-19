@@ -44,6 +44,7 @@ int main(int argc, char ** argv){
     int n;
 
     representa_arreglo_bidimensional_en_unidimensional();
+    representa_arreglo_bidimensional_en_unidimensional_basado_filas();
 
     printf("Digite cantidad de elementos: ");
     scanf("%d", &n);

@@ -18,4 +18,6 @@ int cuenta_as(char text[]);
 
 int producto_punto(int m1, int n1, int m2, int n2, int matriz1[][n1], int matriz2[][n2], int matriz_resultado[m1][n2]);
 
+void representa_arreglo_bidimensional_en_unidimensional_basado_filas();
+
 #endif //ISC105_LIBRERIA_ARREGLOS_H
