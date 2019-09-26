@@ -12,4 +12,21 @@ struct Estudiante{
     char sexo;
 };
 
+typedef struct Estudiante EST;
+typedef int ENTERO;
+
+// Esto es todo en uno. Define la struct Carro y crea un typedef
+typedef struct Carro{
+    char nombre[20];
+    char marca[20];
+    int ano;
+    int codigo;
+} CAR;
+
+typedef struct {
+    char nombre[10];
+    float precio;
+    int cantidad;
+} ARTICULO;
+
 #endif //ISC105_LIBRERIAESTRUCTURA_H
