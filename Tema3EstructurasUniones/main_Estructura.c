@@ -11,6 +11,12 @@ struct casilla{
     int visitado;
 } c1, c2, c3, c4, c5;
 
+struct tablero_buscaminas{
+    int n;
+    int m;
+    struct casilla casillas[1000][1000];
+};
+
 int main(){
     struct Estudiante estu1;
     EST mi_estudiante; // Esta linea es equivalente a la de arriba
