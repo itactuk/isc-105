@@ -8,4 +8,15 @@
 void intercambia(int * k, int * j);
 int suma_matriz(int ** matriz, int N, int M);
 
+typedef struct perro {
+    char * raza;
+    int edad;
+    char * nombre;
+    char * color;
+    struct perro * padre;
+    struct perro * madre;
+    struct perro * hijos;
+    int n_hijos;
+} PERRO;
+
 #endif //ISC105_LIBRERIAPUNTERO_H
