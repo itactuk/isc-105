@@ -21,3 +21,4 @@ add_executable(minunitOrdenamiento Ordenamiento/minunitOrdenamiento.c Ordenamien
 add_executable(mainOrdenamiento Ordenamiento/mainOrdenamiento.c Ordenamiento/libreriaOrdenamiento.c Ordenamiento/libreriaOrdenamiento.h)
 add_executable(PunteroMain Tema4Punteros/PunteroMain.c Tema4Punteros/libreriaPuntero.c Tema4Punteros/libreriaPuntero.h)
 add_executable(PunteroMinunit Tema4Punteros/PunteroMinunit.c Tema4Punteros/libreriaPuntero.c Tema4Punteros/libreriaPuntero.h)
+add_executable(memoriaDinamicaMinUnit Tema5MemoriaDinamica/memoriaDinamicaMinUnit.c Tema5MemoriaDinamica/perroio.c Tema5MemoriaDinamica/perroio.h Tema5MemoriaDinamica/perrodinamico.c Tema5MemoriaDinamica/perrodinamico.h Tema4Punteros/libreriaPuntero.c Tema4Punteros/libreriaPuntero.h)
