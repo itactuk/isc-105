@@ -22,3 +22,4 @@ add_executable(mainOrdenamiento Ordenamiento/mainOrdenamiento.c Ordenamiento/lib
 add_executable(PunteroMain Tema4Punteros/PunteroMain.c Tema4Punteros/libreriaPuntero.c Tema4Punteros/libreriaPuntero.h)
 add_executable(PunteroMinunit Tema4Punteros/PunteroMinunit.c Tema4Punteros/libreriaPuntero.c Tema4Punteros/libreriaPuntero.h)
 add_executable(memoriaDinamicaMinUnit Tema5MemoriaDinamica/memoriaDinamicaMinUnit.c Tema5MemoriaDinamica/perroio.c Tema5MemoriaDinamica/perroio.h Tema5MemoriaDinamica/perrodinamico.c Tema5MemoriaDinamica/perrodinamico.h Tema4Punteros/libreriaPuntero.c Tema4Punteros/libreriaPuntero.h)
+add_executable(minUnitCadenas Tema6CadenaDeCaracteres/minUnitCadenas.c Tema6CadenaDeCaracteres/htmlExtraer.c Tema6CadenaDeCaracteres/htmlExtraer.h)
