@@ -12,6 +12,6 @@ void leer_texto();
 int suma(char * ruta_archivo);
 
 int guardar_perro_bin(char * ruta_archivo, PERRO * perros, int n);
-PERRO * leer_perro_bin(char * ruta_archivo, PERRO * perros, int * n);
+PERRO * leer_perro_bin(char * ruta_archivo, int * n);
 
 #endif //ISC105_ARCHIVOLIB_H

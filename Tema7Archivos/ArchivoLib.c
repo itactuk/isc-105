@@ -2,6 +2,8 @@
 // Created by Ivan's PC on 11/5/2019.
 //
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "ArchivoLib.h"
 
 
@@ -70,16 +72,27 @@ int guardar_perro_bin(char * ruta_archivo, PERRO * perros, int n){
     fclose(pf);
     return 1;
 }
-PERRO * leer_perro_bin(char * ruta_archivo, PERRO * perros, int * n){
+PERRO * leer_perro_bin(char * ruta_archivo, int * n){
     FILE * pf;
+    PERRO * perros;
     char buff[255];
     pf = fopen(ruta_archivo, "r");
-    fwrite(&n, sizeof(int), 1, pf);
-    fwrite(perros, sizeof(PERRO), n, pf);
+    fread(n, sizeof(int), 1, pf);
+    perros = (PERRO *) malloc(*n * sizeof(PERRO));
+    fread(perros, sizeof(PERRO), n, pf);
     for (int i = 0; i < n; ++i) {
-        fwrite(perros[i].raza, sizeof(char), 255, pf);
-        fwrite(perros[i].color, sizeof(char), 255, pf);
-        fwrite(perros[i].nombre, sizeof(char), 255, pf);
+        fread(buff, sizeof(char), 255, pf);
+        perros[i].raza = (char *) malloc((strlen(buff)+1) * sizeof(char));
+        strcpy(perros[i].raza, buff);
+
+        fread(buff, sizeof(char), 255, pf);
+        perros[i].color = (char *) malloc((strlen(buff)+1) * sizeof(char));
+        strcpy(perros[i].color, buff);
+
+        fread(buff, sizeof(char), 255, pf);
+        perros[i].nombre = (char *) malloc((strlen(buff)+1) * sizeof(char));
+        strcpy(perros[i].nombre, buff);
+
     }
     fclose(pf);
 }
