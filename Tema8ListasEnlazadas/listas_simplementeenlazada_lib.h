@@ -16,7 +16,8 @@ NODO * NuevoNodo (Valor x);
 void InsertarCabezaLista(NODO** cabeza, Valor entrada);
 void InsertarLista(NODO* anterior, Valor entrada);
 NODO* BuscarLista (NODO* cabeza, Valor destino);
-NODO* BuscarPosicion(NODO* cabeza, int posicion);
+NODO* BuscarPorPosicion(NODO *cabeza, int posicion); // Equivale a los []
+int BuscarPosicion(NODO *cabeza, Valor x);
 void eliminar (NODO** cabeza, Valor entrada);
 void InsertaOrden(NODO** cabeza, Valor entrada);
 void recorrer(NODO* cabeza, void (*procesar) (Valor v) );
