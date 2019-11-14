@@ -5,7 +5,72 @@
 #include <string.h>
 #include <stdlib.h>
 
+char * leer(){
+    char * cad = NULL;
+    int i = 0;
+    char c;
+
+    while ( (c=getchar())!='\n'){
+        if (i>0){
+            cad = (char*) realloc(cad, (i+2)* sizeof(char));
+        } else{
+            cad = (char*) malloc((i+2)* sizeof(char));
+        }
+        if (cad==NULL) return NULL;
+        cad[i++] = c;
+    }
+    if (cad){
+        cad[i] = '\0';
+    }
+    return cad;
+}
+
+char ** leerncad(int n){
+    char ** cad = NULL;
+    for (int j = 0; j < n; ++j) {
+        if (j>0){
+            cad = (char**) realloc(cad, (j+2)* sizeof(char*));
+        } else{
+            cad = (char**) malloc((j+2)* sizeof(char*));
+        }
+        if (cad==NULL) return NULL;
+        printf("Digite cadena %d ", j);
+        cad[j] = leer();
+        printf("\n");
+    }
+    return cad;
+}
+
 int main(){
+    int n; char ** arrcads;
+    char ** arrcadmod;
+    char * ptresp;
+    printf("Cuantas cadenas leera?");
+    n = atoi(leer());
+    printf("\n");
+    arrcads = leerncad(n);
+    arrcadmod = (char **)malloc(n* sizeof(char*));
+    for (int i = 0; i < n; ++i) {
+        arrcadmod[i] = (char*) malloc(strlen(arrcads[i])* sizeof(char));
+        strcpy(arrcadmod[i], arrcads[i]);
+    }
+
+    for (int j = 0; j < n; ++j) {
+        ptresp = arrcadmod[j];
+        while ((ptresp = strstr(ptresp, " "))!=NULL) {
+            strcpy(ptresp, ptresp + 1);
+            arrcadmod[j] = (char *) realloc(arrcadmod[j], (strlen(arrcadmod[j])+1) * sizeof(char));
+        }
+    }
+
+    for (int k = 0; k < n; ++k) {
+        printf("Cadena %d leida: %s\n", k+1, arrcads[k]);
+        printf("Cadena %d modificada: %s\n", k+1, arrcadmod[k]);
+    }
+
+}
+
+int main2(){
     char *  texto = "56A<valor>5847</valor>4897<valor>87</valor>5445ggg";
     char * ei = "<valor>";
     char * ef = "</valor>";
