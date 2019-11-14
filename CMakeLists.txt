@@ -27,3 +27,4 @@ add_executable(Archivos_main Tema7Archivos/Archivos_main.c Tema7Archivos/Archivo
 add_executable(Archivos_minunit Tema7Archivos/Archivos_minunit.c Tema7Archivos/ArchivoLib.c Tema7Archivos/ArchivoLib.h)
 add_executable(listas_minunit Tema8ListasEnlazadas/listas_minunit.c Tema8ListasEnlazadas/listas_simplementeenlazada_lib.c Tema8ListasEnlazadas/listas_simplementeenlazada_lib.h)
 add_executable(listas_main Tema8ListasEnlazadas/listas_main.c Tema8ListasEnlazadas/listas_simplementeenlazada_lib.c Tema8ListasEnlazadas/listas_simplementeenlazada_lib.h)
+add_executable(RepasoMain Repaso2P/RepasoMain.c)

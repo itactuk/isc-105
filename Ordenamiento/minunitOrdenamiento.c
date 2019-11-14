@@ -9,13 +9,12 @@
 #define MINUNIT_EPSILON 1E-12
 
 MU_TEST(test_Intercalado) {
-    int arr[] = {3, 8, 2, 7};
-    int n = sizeof(arr)/ sizeof(int);
-    ordena_burbuja(n, arr);
-    mu_assert_int_eq(arr[0], 2);
-    mu_assert_int_eq(arr[1], 3);
-    mu_assert_int_eq(arr[2], 7);
-    mu_assert_int_eq(arr[3], 8);
+    ARTÍCULO arr_art[] ={ {"Pan", "1", 12.3}, {"Agua", "2", 1.1}, {"Leche", "1", 2.2}, };
+    ARTÍCULO res= busca_id(arr_art, 3, 2);
+
+    mu_assert_string_eq("Agua", res.nombre);
+    mu_assert_string_eq("2", res.id);
+    mu_assert_double_eq(1.1, res.precio);
 }
 
 MU_TEST(test_Ordenado) {
