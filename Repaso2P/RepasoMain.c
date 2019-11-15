@@ -44,7 +44,7 @@ char ** leerncad(int n){
 int main(){
     int n; char ** arrcads;
     char ** arrcadmod;
-    char * ptresp;
+    int cont;
     printf("Cuantas cadenas leera?");
     n = atoi(leer());
     printf("\n");
@@ -56,11 +56,14 @@ int main(){
     }
 
     for (int j = 0; j < n; ++j) {
-        ptresp = arrcadmod[j];
-        while ((ptresp = strstr(ptresp, " "))!=NULL) {
-            strcpy(ptresp, ptresp + 1);
-            arrcadmod[j] = (char *) realloc(arrcadmod[j], (strlen(arrcadmod[j])+1) * sizeof(char));
+        cont = 0;
+        for (int i = 0; i < strlen(arrcadmod[j]); ++i) {
+            if (arrcadmod[j][i]!=' '){
+                arrcadmod[j][cont++] = arrcadmod[j][i];
+            }
         }
+        arrcadmod[j][cont] = '\0';
+        arrcadmod[j] = (char *) realloc(arrcadmod[j], (strlen(arrcadmod[j])+1) * sizeof(char));
     }
 
     for (int k = 0; k < n; ++k) {
